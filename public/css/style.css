@@ -1,0 +1,546 @@
+/* Main Bits of Pretty */
+
+a {
+	color: #006666;
+  font-family: 'courierprimecode', courier;
+	text-decoration: none;
+
+}
+
+a:hover {
+  text-decoration: dotted #00ffff overline underline;
+}
+
+a:active {
+  color: #009600;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #006666;
+  font-family: 'courierprimecode';
+	margin-top: 1rem;
+}
+ul, dl {
+  	list-style-type: none;
+		font-family: 'courierprime';
+}
+.sq {
+	list-style-type: square;
+}
+.hilite span {
+  box-shadow: 0 0 0 0.6rem #004040;
+  background-color: #004040;
+  color: #cccccc;
+  line-height: 2.3;
+}
+
+.example {
+	padding: 0.5rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.biblio {
+	margin-bottom: 1rem;
+	margin-top: .1rem;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/*
+p {
+			 overflow: hidden;
+	 }
+*/
+
+/* APA style citations: thank you bertobox (https://github.com/bertobox/CSS-for-APA-Style-references) <3 */
+
+@media all {
+  .apa,     .apa ul,     .apa ol,     .apa dl,
+  .ref-apa, .ref-apa ul, .ref-apa ol, .ref-apa dl,
+  .apa-ref, .apa-ref ul, .apa-ref ol, .apa-ref dl,
+  .refapa,  .refapa ul,  .refapa ol,  .refapa dl,
+  .aparef,  .aparef ul,  .aparef ol,  .aparef dl{
+  padding-left: 0;margin-left: 0;
+  }
+  .apa li,
+  .ref-apa li,
+  .refapa li,
+  .apa-ref li,
+  .aparef li{
+  list-style-type: none;
+  }
+  .apa p,     .apa li,     .apa dd,
+  .ref-apa p, .ref-apa li, .ref-apa dd,
+  .refapa p,  .refapa li,  .refapa dd,
+  .apa-ref p, .apa-ref li, .apa-ref dd,
+  .aparef p,  .aparef li,  .aparef dd{
+  margin-left:   2em;
+  text-indent:  -2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  }
+  .ref-apa dt{
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: .83em 0;
+  }
+}
+@media print {
+
+  .apa p,     .apa li,     .apa dd,
+  .ref-apa p, .ref-apa li, .ref-apa dd,
+  .refapa p,  .refapa li,  .refapa dd,
+  .apa-ref p, .apa-ref li, .apa-ref dd,
+  .aparef p,  .aparef li,  .aparef dd{
+  margin-left:   .5in;
+  text-indent:  -.5in;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  }
+
+}
+
+/* Footnotes */
+
+body {
+    counter-reset: footnotecounter;
+}
+
+span.footnote:before {
+  counter-increment: footnotecounter;
+  content: counter(footnotecounter);
+  position: relative;
+  top: -0.4em;
+}
+
+span.footnote {
+    color: rgba(0,102,102,0.77);
+}
+
+/* OS Components */
+
+.content {
+  padding: 3rem;
+  background-color: rgba(204,204,204,1.0);
+  color: #000;
+  box-shadow: 15px 15px 0px 0px rgba(0,255,255,0.25);
+    -webkit-box-shadow: 15px 15px 0px 0px rgba(0,255,255,0.25);
+    -moz-box-shadow: 15px 15px 0px 0px rgba(0,255,255,0.25);
+  min-height: 85vh;
+	max-height: 85vh;
+  overflow: auto;
+  margin-bottom: auto;
+  font: 1.1rem 'courierprime', monospace;
+  /* text-shadow: 0 0 5px #c8c8c8; */
+  border: 6px double #000;
+
+}
+
+.fcontent {
+  padding: 3rem;
+  color: #000;
+  box-shadow: 15px 15px 0px 0px rgba(0,255,255,0.25);
+    -webkit-box-shadow: 15px 15px 0px 0px rgba(0,255,255,0.25);
+    -moz-box-shadow: 15px 15px 0px 0px rgba(0,255,255,0.25);
+  overflow: auto;
+  margin-bottom: auto;
+  border: 6px double #000;
+	background-color: rgba(204,204,204,1.0);
+}
+
+.files {
+  padding: 3rem;
+  background-color: rgba(204,204,204,1.0);
+  color: #000;
+  box-shadow: 15px 15px 0px 0px rgba(0,255,255,0.25);
+    -webkit-box-shadow: 15px 15px 0px 0px rgba(0,255,255,0.25);
+    -moz-box-shadow: 15px 15px 0px 0px rgba(0,255,255,0.25);
+  min-height: 30vh;
+  max-height: 70vh;
+  overflow: auto;
+  margin-bottom: auto;
+  font: 1.2rem 'courierprime', monospace;
+  text-shadow: 0 0 5px #c8c8c8;
+  border: 6px double #000;
+}
+
+.noti {
+  padding: 2.5rem;
+  background-color: rgba(204,204,204,1.0);
+  color: #000;
+  box-shadow: 15px 15px 0px 0px rgba(0,255,255,0.25);
+    -webkit-box-shadow: 15px 15px 0px 0px rgba(0,255,255,0.25);
+    -moz-box-shadow: 15px 15px 0px 0px rgba(0,255,255,0.25);
+  min-height: 100px;
+  overflow: hidden;
+  margin: 20px 10%;
+  font: 1.2rem 'courierprime', monospace;
+  text-shadow: 0 0 5px #c8c8c8;
+  border: 6px double #000;
+}
+
+.logbox {
+  padding: 0.5rem;
+  margin: 20px 10%;
+  background-color: rgba(204,204,204,1.0);
+  color: #000;
+  overflow: hidden;
+  border: 6px double #000;
+  max-width: 80px;
+  max-height: 80px;
+}
+
+.menuclose {
+  background-image: url(/img/x.svg);
+}
+
+.smallfont {
+	font-size: 85%;
+	text-align: center;
+}
+
+.folder {
+  padding: 3rem;
+  background-color: rgba(204,204,204,0.5);
+  color: #000;
+  box-shadow: 15px 15px 0px 0px rgba(0,255,255,0.5);
+    -webkit-box-shadow: 15px 15px 0px 0px rgba(0,255,255,0.5);
+    -moz-box-shadow: 15px 15px 0px 0px rgba(0,255,255,0.5);
+  min-height: 40vh;
+	min-width: 40vh;
+  max-height: 50vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin-bottom: auto;
+  font: 1.2rem 'courierprime', monospace;
+  text-shadow: 0 0 5px #c8c8c8;
+  border: 6px double #000;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal-content {
+	background-color: rgba(204,204,204,0.5);
+}
+
+.avatar {
+	max-width: 300px;
+	float: right;
+}
+
+.modal-backdrop {
+   background-color: transparent;
+}
+
+/** Collapsible Menu CSS **/
+
+.menu-content {
+    max-height: 0;
+    overflow: auto;
+    text-align: center;
+    font-family: 'courierprimecode';
+    padding: 0 0 0 50px;
+}
+.collapsible-menu {
+    color: #000;
+    font-weight: inherit;
+    font-family: 'courierprimecode';
+    width: 100%;
+    z-index: 1;
+    white-space: nowrap;
+    padding: 0.5rem;
+}
+.collapsible-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+.collapsible-menu a {
+    display:block;
+    padding: 10px;
+}
+
+.collapsible-menu label {
+    display: block;
+    cursor: pointer;
+}
+
+input#menu {
+    display: none;
+}
+
+.navihead {
+	font-weight: bold;
+}
+/**/
+
+* {
+  box-sizing: border-box;
+}
+
+.noflow {
+	overflow: hidden;
+}
+
+.tridown {
+  width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 12px solid #555;
+  display: inline-block;
+}
+
+.triright {
+  width: 0;
+	height: 0;
+  border-top: 6px solid transparent;
+	border-left: 12px solid #555;
+	border-bottom: 6px solid transparent;
+  display: inline-block;
+
+}
+
+.desktop {
+  border: 1px double #000;
+  overflow: auto;
+
+}
+
+.top {
+  padding: 10px;
+  background: #f1f1f1;
+  border: 2px double #000;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+	background-color: #004040;
+  font-family: 'courierprime';
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.top a {
+  color: #fff;
+}
+
+.table {
+	font-size:0.9rem;
+ }
+
+ .tgreen {
+	 background-color: #004040;
+   color: #cccccc;
+ }
+ /* */
+
+ html {
+ 	font-family: 'courierprime', courier;
+ 	list-style: decimal-leading-zero;
+  max-height:100%;
+  position:relative;
+ }
+
+body {
+	 background-color: black;
+	 /*background-image: radial-gradient(rgba(0, 150, 0, 0.75), black 120%);*/
+	 height: 100vh;
+	 margin: 0;
+	 color: white;
+   overflow:hidden;
+   background-image: url('/img/background.gif');
+   background-size: cover;
+
+}
+ body::after {
+	 content: "";
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100vw;
+	 height: 100vh;
+	 /*background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.255), rgba(0, 0, 0, 0.255) 1px, transparent 1px, transparent 2px);*/
+	 pointer-events: none;
+}
+ ::selection {
+	 background: #0080ff;
+	 text-shadow: none;
+}
+ pre {
+	 margin: 0;
+   font-family: 'courierprime';
+}
+
+
+* {
+  border-radius: 0 !important;
+}
+
+/* fonts */
+
+@font-face {
+    font-family: 'courierprime';
+    src: url('/fonts/courier_prime-webfont.woff2') format('woff2'),
+         url('/fonts/courier_prime-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'courierprimesans';
+    src: url('/fonts/courierprimesans-webfont.woff2') format('woff2'),
+         url('/fonts/courierprimesans-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'courierprimecode';
+    src: url('/fonts/courier_prime_code-webfont.woff2') format('woff2'),
+         url('/fonts/courier_prime_code-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* mobile layout */
+
+@media only screen and (max-width: 1024px) {
+  body {
+		margin: 0;
+		padding: 1rem;
+		width:100%;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  h1, .h1 {
+    font-size: 30px;
+  }
+
+  h2, .h2 {
+    font-size: 95%;
+  }
+
+  h3, .h3 {
+    font-size: 95%;
+  }
+}
+
+/* From fancy.css*/
+
+/* Boxes? */
+
+.dashed-box {
+  border: 1px dashed #004200;
+  padding: .5rem;
+}
+
+.email-box {
+  background-color: #fff;
+  color: #000;
+  padding: 1rem;
+  height: auto;
+  overflow: scroll;
+}
+
+.email-box p{
+  color: #000;
+}
+
+.email-box a{
+  color: blue;
+	font-family:Roboto-Regular,Helvetica,Arial,sans-serif;
+}
+
+
+/*Scrollbar OwO*/
+
+::-webkit-scrollbar {
+    width: 1em;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 0px #c2b280;
+		  background-color: rgba(204,204,204,0.77);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0,102,102,0.77);
+}
+
+@media screen {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+/*You should activate Windows.*/
+
+
+@media screen and (max-width: 480px) {
+    #overlay {
+        display: none;
+    }
+}
+
+.navbar {
+  z-index: 9998;
+}
+
+a.win{
+  font-family: 'SegoeUILight', sans-serif;
+}
+
+.bottomright {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5em;
+  font-size: 16px;
+}
+
+.kern {
+  letter-spacing: .5px;
+  font-size: 19px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: SegoeUILight;
+    src:
+        local("Segoe UI Light");
+    font-weight: 100;
+}
+
+#overlay {
+  font-family: "Segoe UI Light", sans-serif;
+  color: rgba(169,169,169,.75);
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.small{
+	text-align: center;
+	display: block;
+	max-height: 50%;
+	max-width: 50%;
+	padding: 0.5rem;
+	margin-top: auto;
+	margin-bottom: auto;
+}
