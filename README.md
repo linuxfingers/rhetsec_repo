@@ -8,23 +8,5 @@ Rhetsec_ examines the rhetorical situation, the rhetorical appeals, and how phis
 
 ## keywords
 
-communication
-computer crime
-computer hacking
-computers and information 
-countermeasures
-cyber espionage
-cyberattack
-data security
-digital rhetoric
-internet
-internet security
-inter-disciplinary studies
-malware
-phishing
-privacy
-privacy-invasive software
-rhetoric
-technical communication
-security
-writing
+communication, computer crime, computer hacking, computers and information, countermeasures, cyber espionage, cyberattack, data security
+digital rhetoric, internet, internet security, inter-disciplinary studies, malware, phishing, privacy, privacy-invasive software, rhetoric, technical communication, security, writing
