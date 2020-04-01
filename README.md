@@ -1,4 +1,4 @@
-# rhetsec repository
+# rhetsec_ repository
 
 This git repository serves as a copy of my portfolio as a culminating project for my Masters of Arts in Rhetoric & Writing at St. Cloud State University. This repository is a direct copy of http://www.linuxfingers.com from December 2019, deemed sufficient for graduation and completion of the Masters program.  The sole intent of this repository is posterity and preservation of my project for degree fulfillment. The original project (with tracked changes) is found at linuxfingers/portfolio. 
 
