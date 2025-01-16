@@ -16,7 +16,7 @@
   "homepage": "https://github.com/linuxfingers/portfolio",
   "dependencies": {
     "async": "^3.1.0",
-    "bcrypt": "^5.0.0",
+    "bcrypt": "^5.1.1",
     "bcrypt-nodejs": "0.0.3",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.3.1",
